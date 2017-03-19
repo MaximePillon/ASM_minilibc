@@ -5,12 +5,14 @@
 ## Login   <baldas@epitech.net>
 ## 
 ## Started on  Fri Mar 10 14:24:01 2017 Hugo Baldassin
-## Last update Wed Mar 15 13:21:21 2017 Pillon maxime
+## Last update Sun Mar 19 21:28:20 2017 Pillon maxime
 ##
 
 LIBNAME	=	libasm.so
 
-SRC	=	src/strlen.s
+SRC	=	src/strlen.s \
+		src/strcmp.s \
+		src/strncmp.s
 
 OBJ	=	$(SRC:.s=.o)
 
