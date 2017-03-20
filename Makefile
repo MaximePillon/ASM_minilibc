@@ -1,11 +1,11 @@
 ##
-## Makefile for minilibc in /home/baldas/Prog/repos/tek2/asm/funcs
+## Makefile for minilibc in
 ## 
-## Made by Hugo Baldassin
-## Login   <baldas@epitech.net>
+## Made by Maxime Pillon
+## Login   <maxime.pillon@epitech.net>
 ## 
-## Started on  Fri Mar 10 14:24:01 2017 Hugo Baldassin
-## Last update Mon Mar 20 09:20:36 2017 Pillon maxime
+## Started on  Fri Mar 10 14:24:01 2017 Pillon Maxime
+## Last update Mon Mar 20 11:26:39 2017 Pillon maxime
 ##
 
 LIBNAME	=	libasm.so
@@ -13,7 +13,10 @@ LIBNAME	=	libasm.so
 SRC	=	src/strlen.s \
 		src/strcmp.s \
 		src/strncmp.s \
-		src/strchr.s
+		src/strchr.s \
+		src/memcpy.s \
+		src/memset.s \
+		src/rindex.s
 
 OBJ	=	$(SRC:.s=.o)
 
