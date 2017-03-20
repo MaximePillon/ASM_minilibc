@@ -15,8 +15,8 @@ try:
 	dec	rdx		; decrement the value of the third argument
 	cmp	rdx, 0
 	je	return
-	inc	rsi		; increment the value of esi (esi + 1)
-	inc	rdi		; increment the value of edi (edi + 1)
+	inc	rsi		; increment the value of esi (rsi + 1)
+	inc	rdi		; increment the value of edi (rdi + 1)
 	jmp	try
 
 return:
