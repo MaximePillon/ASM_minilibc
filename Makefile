@@ -5,7 +5,7 @@
 ## Login   <maxime.pillon@epitech.net>
 ## 
 ## Started on  Fri Mar 10 14:24:01 2017 Pillon Maxime
-## Last update Mon Mar 20 13:52:41 2017 Pillon maxime
+## Last update Mon Mar 20 17:05:04 2017 Pillon maxime
 ##
 
 LIBNAME	=	libasm.so
@@ -18,7 +18,9 @@ SRC	=	src/strlen.s \
 		src/memset.s \
 		src/rindex.s \
 		src/strpbrk.s \
-		src/strcspn.s
+		src/strcspn.s \
+		src/strstr.s \
+		src/strcasecmp.s
 
 OBJ	=	$(SRC:.s=.o)
 
