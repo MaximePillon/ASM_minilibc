@@ -6,8 +6,8 @@ memcpy:
 	xor rax, rax		; set rax at the value 0
 
 memcpy_while:
-	mov cl, byte[rdi]	; stock the byte pointed by rdi in cl
-	mov byte[rsi], cl	; stock the byte pointed by cl in rsi
+	mov cl, byte[rsi]	; stock the byte pointed by rsi in cl
+	mov byte[rdi], cl	; stock the byte pointed by cl in rdi
 	inc rdi			; increment the value of rdi by one
 	inc rsi			; increment the value of rsi by one
 	dec rdx			; decrement the value of the third arg

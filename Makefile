@@ -5,7 +5,7 @@
 ## Login   <maxime.pillon@epitech.net>
 ## 
 ## Started on  Fri Mar 10 14:24:01 2017 Pillon Maxime
-## Last update Mon Mar 20 17:05:04 2017 Pillon maxime
+## Last update Mon Mar 20 17:15:02 2017 Maxence DELACROIX
 ##
 
 LIBNAME	=	libasm.so
@@ -15,6 +15,7 @@ SRC	=	src/strlen.s \
 		src/strncmp.s \
 		src/strchr.s \
 		src/memcpy.s \
+		src/memmove.s \
 		src/memset.s \
 		src/rindex.s \
 		src/strpbrk.s \
