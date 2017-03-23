@@ -7,10 +7,10 @@ strncmp:
 
 try:
 	mov	al, byte[rsi]	; save the byte pointed by rsi in al
-	mov	bl, byte[rdi]	; save the byte pointed by rdi in bl
-	cmp	al, bl		; compare the value of al and bl
+	mov	r10b, byte[rdi]	; save the byte pointed by rdi in r10b
+	cmp	al, r10b	; compare the value of al and r10b
 	jne	return		; (if != 0 jump to return)
-	cmp	bl, 0		; compare the value of al and 0
+	cmp	r10b, 0		; compare the value of al and 0
 	je	return		; (if == 0 jump to return)
 	dec	rdx		; decrement the value of the third argument
 	cmp	rdx, 0
@@ -20,8 +20,8 @@ try:
 	jmp	try
 
 return:
-	sub	bl, al		; substract the value bl by al
-	movsx	rax, bl		; set the return value to the value of the substract
+	sub	r10b, al	; substract the value r10b by al
+	movsx	rax, r10b	; set the return value to the value of the substract
 
 exit:
 	ret
