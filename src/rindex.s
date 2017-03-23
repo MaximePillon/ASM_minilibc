@@ -7,6 +7,8 @@ rindex:
 
 try:
 	mov	cl, byte[rdi]	; save the byte pointed by rdi in bl
+	cmp	cl, -1
+	je	exit
 	cmp	cl, sil		; compare the value of the second parameter and bl
 	je	return		; (if == 0 jump to return)
 	cmp	cl, 0		; compare the value of al and 0
@@ -17,7 +19,8 @@ try:
 return:
 	mov	rax, rdi
 	inc	rdi		; increment the value of rdi (rdi + 1)
-	jmp	try
+	cmp	rax, 0
+	jne	try
 
 exit:
 	ret
