@@ -22,5 +22,4 @@ return:
 	movsx	rax, bl		; set the return value to the value of the substract
 
 exit:
-	leave
 	ret
