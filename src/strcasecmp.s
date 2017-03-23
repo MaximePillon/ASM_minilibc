@@ -1,7 +1,8 @@
+bits 64
 
 section .text
 
-global strcasecmp
+global strcasecmp:function
 
 strcasecmp:
 	xor	rax, rax	; set rax at the 0 value

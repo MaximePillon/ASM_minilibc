@@ -1,4 +1,6 @@
-	global strcspn
+bits 64
+
+global strcspn:function
 
 section .text
 

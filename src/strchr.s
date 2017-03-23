@@ -1,6 +1,8 @@
+bits 64
+
 section .text
 
-global strchr
+global strchr:function
 
 strchr:
 	xor	rax, rax	; set rax at the 0 value
@@ -15,7 +17,7 @@ try:
 	jmp	try
 
 return:
-	mov	rax, rdi
+	mov	rax, [rdi]
 
 exit:
 	ret

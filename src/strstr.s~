@@ -1,10 +1,8 @@
-bits 64
-
-global strpbrk:function
+global strstr
 
 section .text
 
-strpbrk:
+strstr:
 	xor rax, rax 		; assign to rax the value 0
 	xor rbx, rbx
 
@@ -19,11 +17,12 @@ try:
 
 reject:
 	cmp byte[rbx], 0
-	je try
-	cmp cl, byte[rbx]
 	je exit
+	mov dl, byte[rbx]
 	inc rbx
-	jmp reject
+	cmp cl, dl
+	je reject
+	jmp try
 
 exit:
 	ret

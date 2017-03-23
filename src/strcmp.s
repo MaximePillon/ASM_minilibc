@@ -1,7 +1,8 @@
+bits 64
 
 section .text
 
-global strcmp
+global strcmp:function
 
 strcmp:
 	xor	rax, rax	; set rax at the 0 value
