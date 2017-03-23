@@ -24,7 +24,7 @@ cmp_case:
 	cmp	al, bl
 	ja	sub_al
 	cmp	al, bl
-	je	add_al
+	jb	add_al
 	cmp	al, bl
 	je	try
 	cmp	bl, 0		; compare the value of al and 0
