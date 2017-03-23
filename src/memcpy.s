@@ -7,6 +7,8 @@ memcpy:
 
 memcpy_while:
 	mov cl, byte[rsi]	; stock the byte pointed by rsi in cl
+	cmp cl, -1
+	jmp return
 	mov byte[rdi], cl	; stock the byte pointed by cl in rdi
 	inc rdi			; increment the value of rdi by one
 	inc rsi			; increment the value of rsi by one
