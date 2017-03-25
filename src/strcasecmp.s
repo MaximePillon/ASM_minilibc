@@ -45,7 +45,6 @@ sub_al:
 	jmp	try
 
 return:
-	sub	al, 32
 	sub	r10b, al	; substract the value r10b by al
 	movsx	rax, r10b	; set the return value to the value of the substract
 	ret
