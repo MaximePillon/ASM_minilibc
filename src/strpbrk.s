@@ -14,7 +14,7 @@ try:
 	mov rax, rdi
 	inc rdi
 	cmp cl, 0
-	je exit
+	je hardexit
 	jmp reject
 
 reject:
@@ -26,4 +26,8 @@ reject:
 	jmp reject
 
 exit:
+	ret
+
+hardexit:
+	mov rax, 0
 	ret

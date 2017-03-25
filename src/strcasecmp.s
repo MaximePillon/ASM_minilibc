@@ -26,9 +26,9 @@ try:
 
 add_al:
 	cmp	cl, 'A'
-	jl	try
+	jl	return
 	cmp	cl, 'Z'
-	jg	try
+	jg	return
 	add	cl, 32
 	cmp	cl, r10b
 	jne	return
@@ -36,15 +36,16 @@ add_al:
 
 sub_al:
 	cmp	cl, 'a'
-	jl	try
+	jl	return
 	cmp	cl, 'z'
-	jg	try
+	jg	return
 	sub	cl, 32
 	cmp	cl, r10b
 	jne	return
 	jmp	try
 
 return:
+	sub	al, 32
 	sub	r10b, al	; substract the value r10b by al
 	movsx	rax, r10b	; set the return value to the value of the substract
 	ret
