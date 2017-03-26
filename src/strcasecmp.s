@@ -6,46 +6,61 @@ global strcasecmp:function
 
 strcasecmp:
 	xor	rax, rax	; set rax at the 0 value
-	xor	cl, cl
+	xor	r8, r8
+	xor	r10b, r10b
 
 try:
-	mov	al, byte[rsi]	; save the byte pointed by rsi in al
-	mov	r10b, byte[rdi]	; save the byte pointed by rdi in r10b
-	mov	cl, byte[rsi]
-	inc	rsi		; increment the value of esi (rsi + 1)
-	inc	rdi		; increment the value of edi (rdi + 1)
+	mov	al, byte[rsi + r8]	; save the byte pointed by rsi in al
+	mov	cl, byte[rdi + r8]	; save the byte pointed by rdi in r10b
+	inc	r8
 	cmp	al, 0		; compare the value of al and 0
 	je	return		; (if == 0 jump to return)
-	cmp	r10b, 0		; compare the value of al and 0
+	cmp	cl, 0		; compare the value of al and 0
 	je	return		; (if == 0 jump to return)
-	cmp	al, r10b
+	cmp	al, cl
 	jg	sub_al
-	cmp	al, r10b
+	cmp	al, cl
 	jl	add_al
 	jmp	try
 
 add_al:
-	cmp	cl, 'A'
+	cmp	al, 'A'
 	jl	return
-	cmp	cl, 'Z'
+	cmp	al, 'Z'
 	jg	return
-	add	cl, 32
-	cmp	cl, r10b
-	jne	return
+	add	al, 32
+	cmp	al, cl
+	jg	addret
+	cmp	al, cl
+	jl	return
 	jmp	try
 
 sub_al:
-	cmp	cl, 'a'
+	cmp	al, 'a'
 	jl	return
-	cmp	cl, 'z'
+	cmp	al, 'z'
 	jg	return
-	sub	cl, 32
-	cmp	cl, r10b
-	jne	return
+	sub	al, 32
+	cmp	al, cl
+	jg	return
+	cmp	al, cl
+	jl	subret
 	jmp	try
 
+addret:
+	sub	al, 32
+	sub	cl, al		; substract the value r10b by al$
+	movsx	rax, cl		; set the return value to the value of the substract
+	ret
+	
+subret:
+	add	al, 32
+	sub	cl, al		; substract the value r10b by al
+	movsx	rax, cl		; set the return value to the value of the substract
+	ret
+	
 return:
-	sub	r10b, al	; substract the value r10b by al
-	movsx	rax, r10b	; set the return value to the value of the substract
+	sub	cl, al		; substract the value r10b by al
+	movsx	rax, cl		; set the return value to the value of the substract
 	ret
 
