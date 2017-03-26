@@ -16,10 +16,10 @@ try:
 
 reject:
 	mov cl, byte[rdi]
-	cmp cl, 0
-	je exitHard
 	cmp byte[rbx], 0
 	je exit
+	cmp cl, 0
+	je exitHard
 	mov dl, byte[rbx]
 	inc rbx
 	inc rdi
